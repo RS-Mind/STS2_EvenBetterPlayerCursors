@@ -14,6 +14,9 @@ public static class CreatureColorDotPatch
 
     public static void Postfix(NCreature __instance)
     {
+        if (!CursorConfig.ShowPlayerDots)
+        return;
+
         var player = __instance.Entity?.Player;
         if (player == null)
             return;

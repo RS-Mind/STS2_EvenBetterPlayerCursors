@@ -16,4 +16,6 @@ public class CursorConfig : SimpleModConfig
     // manual tint for your own cursor, used when AutoCharacterColor is off
     public static bool EnableTint { get; set; } = false;
     public static Color CursorColor { get; set; } = new(1f, 1f, 1f);
+
+    public static bool ShowPlayerDots { get; set; } = false;
 }
