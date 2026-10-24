@@ -81,7 +81,8 @@ public static class CursorTinter
             for (int x = 0; x < image.GetWidth(); x++)
             {
                 Color p = original.GetPixel(x, y);
-                image.SetPixel(x, y, new Color(p.R * tint.R, p.G * tint.G, p.B * tint.B, p.A));
+                float grayscale = (0.299f * p.R) + (0.587f * p.G) + (0.114f * p.B);
+                image.SetPixel(x, y, new Color(grayscale * tint.R, grayscale * tint.G, grayscale * tint.B, p.A));
             }
         }
     }

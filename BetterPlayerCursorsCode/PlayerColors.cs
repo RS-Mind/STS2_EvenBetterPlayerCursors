@@ -19,16 +19,6 @@ public static class PlayerColors
         new(1.00f, 0.56f, 0.67f), // pink
     };
 
-    // matched against the character's ModelId and type name, lowercase
-    private static readonly (string key, Color color)[] CharacterColors =
-    {
-        ("ironclad",    new Color(0.94f, 0.16f, 0.04f)), // red
-        ("silent",      new Color(0.13f, 0.98f, 0.00f)), // green
-        ("defect",      new Color(0.14f, 0.40f, 1.00f)), // blue
-        ("necrobinder", new Color(0.68f, 0.20f, 0.95f)), // purple
-        ("regent",      new Color(0.97f, 0.56f, 0.02f)), // orange
-    };
-
     public static Color ForPlayer(ulong netId)
     {
         RunState? state = GetRunState();
@@ -55,20 +45,7 @@ public static class PlayerColors
         if (player?.Character == null)
             return null;
 
-        // match on both the model id and the type name — whichever contains the key
-        string identity = ($"{player.Character.Id} {player.Character.GetType().Name}").ToLowerInvariant();
-
-        Color? baseColor = null;
-        foreach (var (key, color) in CharacterColors)
-        {
-            if (identity.Contains(key))
-            {
-                baseColor = color;
-                break;
-            }
-        }
-        if (baseColor == null)
-            return null; // unknown character (future roster) -> slot color
+        Color? baseColor = player.Character.NameColor;
 
         // same character picked twice: later slots get progressively lighter shades
         int duplicateRank = 0;
