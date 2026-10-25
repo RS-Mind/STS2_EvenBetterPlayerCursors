@@ -1,7 +1,7 @@
 using BaseLib.Config;
 using Godot;
 
-namespace BetterPlayerCursors.BetterPlayerCursorsCode;
+namespace EvenBetterPlayerCursors.EvenBetterPlayerCursorsCode;
 
 public class CursorConfig : SimpleModConfig
 {

@@ -3,7 +3,7 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Runs;
 
-namespace BetterPlayerCursors.BetterPlayerCursorsCode;
+namespace EvenBetterPlayerCursors.EvenBetterPlayerCursorsCode;
 
 public static class PlayerColors
 {

@@ -2,7 +2,7 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 
-namespace BetterPlayerCursors.BetterPlayerCursorsCode;
+namespace EvenBetterPlayerCursors.EvenBetterPlayerCursorsCode;
 
 // Small color marker above each player creature in multiplayer combat, matching their
 // cursor color. Remote players' health bars are hidden by default, so the marker anchors

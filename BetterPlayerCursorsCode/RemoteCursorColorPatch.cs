@@ -1,7 +1,7 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Nodes.Multiplayer;
 
-namespace BetterPlayerCursors.BetterPlayerCursorsCode;
+namespace EvenBetterPlayerCursors.EvenBetterPlayerCursorsCode;
 
 // Modulate tints the whole cursor Control. Applied at _Ready for the initial color and
 // re-applied on every UpdateImage so cursors created in the lobby (before RunState exists)

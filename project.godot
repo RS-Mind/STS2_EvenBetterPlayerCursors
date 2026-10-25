@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="BetterPlayerCursors"
+config/name="EvenBetterPlayerCursors"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
-config/icon="res://BetterPlayerCursors/mod_image.png"
+config/icon="res://EvenBetterPlayerCursors/mod_image.png"
 
 [display]
 
@@ -24,7 +24,7 @@ window/stretch/aspect="expand"
 
 [dotnet]
 
-project/assembly_name="BetterPlayerCursors"
+project/assembly_name="EvenBetterPlayerCursors"
 
 [rendering]
 

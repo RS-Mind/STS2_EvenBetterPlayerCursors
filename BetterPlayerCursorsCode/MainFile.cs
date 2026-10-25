@@ -3,12 +3,12 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 
-namespace BetterPlayerCursors.BetterPlayerCursorsCode;
+namespace EvenBetterPlayerCursors.EvenBetterPlayerCursorsCode;
 
 [ModInitializer(nameof(Initialize))]
 public partial class MainFile : Node
 {
-    public const string ModId = "BetterPlayerCursors";
+    public const string ModId = "EvenBetterPlayerCursors";
 
     public static MegaCrit.Sts2.Core.Logging.Logger Logger { get; } = new(ModId, MegaCrit.Sts2.Core.Logging.LogType.Generic);
 
