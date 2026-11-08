@@ -17,6 +17,8 @@ public static class CursorTinter
     private static Color _appliedColor = new(1f, 1f, 1f);
     private static bool _tintedOnce;
 
+    private static readonly Color DefaultColor = new Color(1.233977321f, 0.9947922895f, 0.4131377815f);
+
     public static void OnCursorManagerSeen(NCursorManager instance)
     {
         _manager = instance;
@@ -53,11 +55,10 @@ public static class CursorTinter
         if (CursorConfig.AutoCharacterColor && LocalContext.NetId is ulong id)
         {
             Color c = PlayerColors.ForPlayer(id);
-            if (c != new Color(1f, 1f, 1f) || !CursorConfig.EnableTint)
-                return c;
+            return c;
         }
 
-        return CursorConfig.EnableTint ? CursorConfig.CursorColor : new Color(1f, 1f, 1f);
+        return CursorConfig.EnableTint ? CursorConfig.CursorColor : DefaultColor;
     }
 
     private static void TintField(NCursorManager instance, string fieldName, Color tint)

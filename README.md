@@ -9,35 +9,17 @@ A Slay the Spire 2 mod that lets you change your mouse cursor color, and gives e
 - Pick any color for your cursor with an in-game color picker
 - Changes apply instantly, no restart needed
 - Your color is saved between sessions
-- Multiplayer: other players' cursors get their own colors automatically (experimental, still testing this one)
+- Colors are automatically determined based on a character's map drawing color
+- Multiplayer: other players' cursors get their own colors automatically
 
 ## Install
 
-**Steam Workshop (easiest):** subscribe [here](https://steamcommunity.com/sharedfiles/filedetails/?id=3760146600) and you're done.
-
-**Manual:** grab the latest release, drop the `BetterPlayerCursors` folder into `Slay the Spire 2/mods/`.
+**Steam Workshop (easiest):** subscribe [here](https://steamcommunity.com/sharedfiles/filedetails/?id=3826766177) and you're done.
 
 Requires [BaseLib](https://steamcommunity.com/sharedfiles/filedetails/?id=3737335127).
-
-## How to use
-
-Settings → General → Mod Configuration (BaseLib) → BetterPlayerCursors. Toggle the tint on and pick a color.
-
-## Building from source
-
-You'll need the .NET 9 SDK and Slay the Spire 2 installed.
-
-```
-dotnet build
-```
-
-builds the dll and copies it to the game's mods folder. For a full build with assets (.pck) you also need Godot 4.5.1 .NET — set its path in `Directory.Build.props`, then `dotnet publish`.
 
 ## Thanks
 
 - [Alchyr](https://github.com/Alchyr) for BaseLib and the mod template
+- [epicconnor](https://github.com/epicconnnnor) for the original mod
 - The StS2 modding community
-
-## License
-
-MIT

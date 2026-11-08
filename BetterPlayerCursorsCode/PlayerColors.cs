@@ -19,6 +19,8 @@ public static class PlayerColors
         new(1.00f, 0.56f, 0.67f), // pink
     };
 
+    private const float MinColorComponent = 30f / 255f;
+
     public static Color ForPlayer(ulong netId)
     {
         RunState? state = GetRunState();
@@ -27,7 +29,19 @@ public static class PlayerColors
         {
             Color? charColor = CharacterColorFor(state, netId);
             if (charColor != null)
-                return charColor.Value;
+            {
+                Color finalColor = charColor.Value;
+
+                // Ensure that the color is not too dark so the tint looks better
+                if (finalColor.R < MinColorComponent)
+                    finalColor.R = MinColorComponent;
+                if (finalColor.G < MinColorComponent)
+                    finalColor.G = MinColorComponent;
+                if (finalColor.B < MinColorComponent)
+                    finalColor.B = MinColorComponent;
+
+                return finalColor;
+            }
         }
 
         int slot = state?.GetPlayerSlotIndex(netId) ?? -1;
@@ -45,7 +59,7 @@ public static class PlayerColors
         if (player?.Character == null)
             return null;
 
-        Color? baseColor = player.Character.NameColor;
+        Color? baseColor = player.Character.MapDrawingColor;
 
         // same character picked twice: later slots get progressively lighter shades
         int duplicateRank = 0;
