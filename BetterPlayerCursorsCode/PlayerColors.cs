@@ -59,7 +59,7 @@ public static class PlayerColors
         if (player?.Character == null)
             return null;
 
-        Color? baseColor = player.Character.MapDrawingColor;
+        Color? baseColor = CursorConfig.UseMapDrawColor ? player.Character.MapDrawingColor : player.Character.NameColor;
 
         // same character picked twice: later slots get progressively lighter shades
         int duplicateRank = 0;

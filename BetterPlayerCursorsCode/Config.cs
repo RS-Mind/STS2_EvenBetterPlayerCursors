@@ -10,6 +10,9 @@ public class CursorConfig : SimpleModConfig
     // own cursor follows your character's color during a run
     public static bool AutoCharacterColor { get; set; } = true;
 
+    // auto character color uses map drawing color instead of name color
+    public static bool UseMapDrawColor { get; set; } = false;
+
     // multiplayer: assign colors by player slot instead of character
     public static bool RandomColors { get; set; } = false;
 
